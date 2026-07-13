@@ -12,6 +12,11 @@ from pydantic import BaseModel
 app = FastAPI(title="Markdown to HTML API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
+
+@app.get("/")
+async def root():
+    return {"service": "Markdown to HTML API", "version": "1.0.0", "related": ["Text to Slug API", "URL Metadata Extractor API"]}
+
 @app.api_route("/health", methods=["GET", "HEAD"])
 async def health():
     return {"status": "ok"}
