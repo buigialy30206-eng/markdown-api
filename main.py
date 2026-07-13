@@ -5,7 +5,7 @@ Convert Markdown text to HTML. Pure Python.
 
 import re
 
-from fastapi import Query
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
